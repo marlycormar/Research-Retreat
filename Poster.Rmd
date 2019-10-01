@@ -5,7 +5,7 @@ date: "`r Sys.Date()`"
 output:
   pagedown::poster_relaxed:
     self_contained: false
-bibliography: packages.bib
+bibliography: bibliography.bib
 references:
   - id: naruto
     author:
@@ -157,5 +157,5 @@ $$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
 ================================================================================
 
 ```{r, include=FALSE}
-knitr::write_bib(c('knitr', 'rmarkdown', 'xaringan'), 'packages.bib')
+#knitr::write_bib(c('knitr', 'rmarkdown', 'xaringan'), 'packages.bib')
 ```
