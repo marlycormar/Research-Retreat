@@ -72,24 +72,30 @@ Yihui knows a bit about R/HTML/CSS/JS and wrote **knitr** [@R-knitr], which beca
 
 
 
-[Motivation]{.blue}
+[Applicability Domain]{.blue}
 ================================================================================
 
+## Applicability Domain
+
+The **Applicability Domain** (AD) expressess the scope and limitations of a model, i.e., the sample space for which the model is considered to be applicable.
+
+The methods used to define the AD are based on the premise that a model's prediction is reliable if the sample for which a prediction is being made is _similar_ to the training set.
+
+## Applicability Domain In Chemistry
+
+QSARs (Quantitative Structure–Activity Relationships) are theoretical models that can be used to predict the physicochemical, biological and environmental properties of chemicals.
+
+Since 2004, the Organisation for Economic Cooperation and Development (OECD) Member Countries adopted five principles for the validation of QSAR models for regulatory purposes, which include a "defined domain of applicability". This need is based on the fact that QSARs are reductionist models, which are inevitably associated with limitations in terms of the types of chemical structures, physicochemical properties and mechanisms of action for which they can generate reliable predictions [@Curr].
+
+## Applicability Domain Outside Chemistry
+
+Although there are methods currently used to establish the applicability domain of models, they have not been systematically studied as a whole and the ones that have, mostly use the outcome of the prediction to establish reliability.
+
+Applicability domain methods measure the 'similarity' of new samples to the training set. As such, they do not depend on the outcome of the prediction.
+
 ```{r, include=FALSE}
-lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, qui officia deserunt mollit anim id est laborum.'
+lorem = "hello"
 ```
-
-## There are many secrets about **xaringan**, **knitr**, and R Markdown to be revealed
-
-`r lorem`
-
-![The **xaringan** logo, adapted from Sharingan of the Uchiha clan.](https://user-images.githubusercontent.com/163582/45438104-ea200600-b67b-11e8-80fa-d9f2a99a03b0.png)
-
-## HTML/CSS/JS are fun to play with
-
-`r paste('-', strwrap(lorem, 230), collapse = '\n')`
-
-
 
 
 [Schedule]{.pink}
