@@ -6,24 +6,13 @@ output:
   pagedown::poster_relaxed:
     self_contained: false
 bibliography: bibliography.bib
-references:
-  - id: naruto
-    author:
-    - family: Kishimoto
-      given: Masashi
-    title: 'Naruto Shippūden'
-    issued:
-      year: 2007
-    URL: https://en.wikipedia.org/wiki/Naruto
 ---
-
-
 
 
 Applicability Domain [in]{.tiny} Data Science
 ================================================================================
 
- **xaringan** [@R-xaringan], which nobody knows how to pronounce (including Yihui himself, because it was adapted from the Japanese manga series Naruto by @naruto) **xaringan**. After a few replies in the [Github issue](https://github.com/yihui/xaringan/issues/172), he realized there might be enough topics on **xaringan** for a short book. Accidentally, he invented a new development model for writing books: the Github-issue-driven book development.
+which nobody knows how to pronounce (including Yihui himself, because it was adapted from the Japanese manga series Naruto by ) **xaringan**. After a few replies in the [Github issue](https://github.com/yihui/xaringan/issues/172), he realized there might be enough topics on **xaringan** for a short book. Accidentally, he invented a new development model for writing books: the Github-issue-driven book development.
 
 
 
@@ -64,7 +53,7 @@ Yihui is eager to know how much Eric's writing is better than his magnetic voice
 
 Main author of **xaringan**
 
-Yihui knows a bit about R/HTML/CSS/JS and wrote **knitr** [@R-knitr], which became a cornerstone of R Markdown.
+Yihui knows a bit about R/HTML/CSS/JS and wrote , which became a cornerstone of R Markdown.
 :::
 
 [All pictures above are from the authors' Github profiles. This poster was created via the R package [**pagedown**](https://github.com/rstudio/pagedown).]{.disclaimer}
