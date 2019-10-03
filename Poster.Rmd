@@ -170,9 +170,6 @@ mean_sim
 ![mean_sim](./images/mean_sim.png)
 
 
-[Bibliography]{.yellow}
+[Bibliography]{}
 ================================================================================
 
-```{r, include=FALSE}
-#knitr::write_bib(c('knitr', 'rmarkdown', 'xaringan'), 'packages.bib')
-```
