@@ -61,16 +61,16 @@ The methods used to define the AD are based on the premise that a model's predic
 
 QSARs (Quantitative Structure–Activity Relationships) are theoretical models that can be used to predict the physicochemical, biological and environmental properties of chemicals.
 
-Since 2004, the Organisation for Economic Cooperation and Development (OECD) Member Countries adopted five principles for the validation of QSAR models for regulatory purposes, which include a "defined domain of applicability". This need is based on the fact that QSARs are reductionist models, which are inevitably associated with limitations in terms of the types of chemical structures, physicochemical properties and mechanisms of action for which they can generate reliable predictions [@Curr].
+Since 2004, the Organization for Economic Cooperation and Development (OECD) Member Countries adopted five principles for the validation of QSAR models for regulatory purposes, which include a "defined domain of applicability". This need is based on the fact that QSARs are reductionist models, which are inevitably associated with limitations in terms of the types of chemical structures, physicochemical properties and mechanisms of action for which they can generate reliable predictions [@Curr].
 
 ## Applicability Domain Outside Chemistry
 
-Although there are methods currently used to establish the applicability domain of models, they have not been systematically studied as a whole and the ones that have, mostly use the outcome of the prediction to establish reliability.
+Although there are methods currently used to establish the applicability domain of models, they have not been systematically studied as a whole, and the ones that have mostly use the outcome of the prediction to establish reliability.
 
 Applicability domain methods measure the 'similarity' of new samples to the training set. As such, they do not depend on the outcome of the prediction, i.e., they are _unsupervised methods_.
 
 
-[Methods]{.pink}
+[Methods]{}
 ================================================================================
 
 ```{css, echo=FALSE}
@@ -93,9 +93,9 @@ It is a commonly used data reduction technique. This method seeks to find linear
 
 The first PC is defined as the linear combination of the predictors that captures the most variability of all possible linear combinations. Then, subsequent PCs are derived such that these linear combinations capture the most remaining variability while also being uncorrelated with all previous PCs. The jth PC can be written as
 
-$$PC_j = (a_{j1} \times \text{Predictor 1}) + \dots + (a_{jP} \times \text{Predictor P})$$
+$$PC_j = (a_{j1} \times \text{Predictor 1}) + \dots + (a_{jP} \times \text{Predictor P}),$$
 
-$P$ is the number of predictors. The coefficients $a_{ji}$ are called component weights and help us understand which predictors are most important to each PC [@APM].
+where $P$ is the number of predictors. The coefficients $a_{ji}$ are called component weights and help us understand which predictors are most important to each PC [@APM].
 
 <!--
 While PCA delivers new predictors with desirable characteristics, it must be used with understanding and care. PCA seeks predictor-set variation without regard to any further understanding of the predictors (i.e., measurement scales or distributions) or to knowledge of the modeling objectives (i.e., response variable). Hence, without proper guidance, PCA can generate components that summarize characteristics of the data that are irrelevant to the underlying structure of the data and also to the ultimate modeling objective.
@@ -107,19 +107,19 @@ The second caveat of PCA is that it does not consider the modeling objective or 
 
 ## Hat Values
 
-They measure the distance of a data point to the center of the training set distribution. For example, if the numeric training set matrix was $X_{n \times p}$, the hat matrix for the training set would be computed using
+They measure the distance of a data point to the center of the training set distribution. For example, if the training set were the matrix $X_{n \times p}$, then the hat matrix for the training set would be computed using the formula
 
-$$H = X^\intercal(X^\intercal X)^{-1}X$$
-The corresponding hat values for the training set would be the diagonals of $H$. For a new sample, say a data vector $u_{p \times 1}$, the hat value would be
+$$H = X^\intercal(X^\intercal X)^{-1}X.$$
+The corresponding hat values for the training set would be the diagonal entries of $H$. For a new sample, say a data vector $u_{p \times 1}$, the hat value would be
 
-$$h = u^\intercal (X^\intercal X)^{-1}u$$
+$$h = u^\intercal (X^\intercal X)^{-1}u.$$
 Hat values are less tolerant than PCA. For example, extremely correlated predictors will degrade the ability of the hat values to be effectively used. Also, since an inverse is used, there cannot be an linear dependencies within $X$.
 
 ## Similarity Statistics
 
 Similarity statistics can be used to compare data sets where all of the predictors are binary. One of the most common measures is the Jaccard index. For sets $A$ and $B$, the Jaccard index is defined as
 
-$$J(A, B) = \frac{|A \cap B|}{|A \cup B|}$$
+$$J(A, B) = \frac{|A \cap B|}{|A \cup B|}.$$
 
 For a training set of size $n$, there are $n$ similarity statistics for each new sample.  These can be summarized via the mean statistic or a quantile. In general, we want similarity to be low within the training set and high for new samples to be predicted.
 
