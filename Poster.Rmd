@@ -123,19 +123,52 @@ $$J(A, B) = \frac{|A \cap B|}{|A \cup B|}.$$
 
 For a training set of size $n$, there are $n$ similarity statistics for each new sample.  These can be summarized via the mean statistic or a quantile. In general, we want similarity to be low within the training set and high for new samples to be predicted.
 
-
-[Examples by `applicable`]{.green}
+[The `applicable` package]{}
 ================================================================================
 
+**Principal Component Analysis**
 
-## Principal Component Analysis
+Principal component analysis methods in `applicable:
 
-![The most well-known feature of **xaringan**: the random Moustache Karl (aka `yolo = TRUE`).](https://github.com/yihui/xaringan/releases/download/v0.0.2/karl-moustache.jpg)
+- `apd_pca`: computes the PCs that account for up to either 95% or the provided threshold of variability. It also computes the percentiles of the PCs and the mean of each PC.
+- `autoplot`: plots the distribution function for pcas.
+- `score`: calculates the PCs of the new data and their percentiles as compared to the training data. The number of PCs computed depends on the threshold given at fit time. It also computes the multivariate distance between each PC and its mean.
 
-## Hat Values
+<br>
 
+**Hat values**
 
-## Similarity Statistics
+Hat values methods in `applicable:
+
+- `apd_hat_values`: computes the matrix $X^\intercal$
+- `score`: calculates the hat values of new samples and their percentiles.
+
+**Similarity statistics**
+
+Jaccard metric methods in `applicable`:
+
+- `apd_similarity`: analyzes samples in terms of similarity scores. For a training set of $n$ samples, a new sample is compared to each, resulting in $n$ similarity scores. These can be summarized into the median similarity.
+- `autoplot`: shows the cumulative probability versus the unique similarity values in the training set.
+- `score`: scores new samples using similarity methods. In particular, it calculates the similarity scores.
+
+**Example - Similarity statistics**
+
+The example data (`binary_tr`) is from two QSAR data sets where binary fingerprints are used as predictors. We will construct the model, plot the empirical cumulative distribution function for the training set, and summarize across all training set similarities.
+
+```
+sim <- apd_similarity(binary_tr)
+autoplot(sim)
+```
+```
+mean_sim <-
+  score(sim,
+  new_data = binary_unk)
+mean_sim
+```
+![autoplot](./images/autoplot.png)
+
+![mean_sim](./images/mean_sim.png)
+
 
 [Bibliography]{.yellow}
 ================================================================================
