@@ -12,7 +12,7 @@ bibliography: bibliography.bib
 Applicability Domain [in]{.tiny} Data Science
 ================================================================================
 
-which nobody knows how to pronounce (including Yihui himself, because it was adapted from the Japanese manga series Naruto by ) **xaringan**. After a few replies in the [Github issue](https://github.com/yihui/xaringan/issues/172), he realized there might be enough topics on **xaringan** for a short book. Accidentally, he invented a new development model for writing books: the Github-issue-driven book development.
+**About the Author**: Marly Cormar is a PhD Candidate in Mathematics at the University of Florida (UF). She also works as a software developer and data analyst for the College of Medicine at UF. Marly enjoys the pure flavor of researching mixed with the applied nature of developing applications. To see her full bio, you can go to her personal site *www.marlycormar.com*
 
 
 
