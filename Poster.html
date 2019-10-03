@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="author" content="Marly Cormar" />
+    <meta name="date" content="2019-10-02" />
+    <title>2019 NSF-AGEP Research Exchange Retreat at Stanford University</title>
+
+        <link href="Poster_files/paged-0.4.6/css/poster-relaxed.css" rel="stylesheet" />
+    
+    
+    
+
+    
+  </head>
+  <body>
+
+
+<div id="applicability-domain-in-data-science" class="section level1">
+<h1>Applicability Domain <span class="tiny">in</span> Data Science</h1>
+<p><strong>About the Author</strong>: Marly Cormar is a PhD Candidate in Mathematics at the University of Florida (UF). She also works as a software developer and data analyst for the College of Medicine at UF. Marly enjoys the pure flavor of researching mixed with the applied nature of developing applications. To see her full bio, you can go to her personal site <em>www.marlycormar.com</em></p>
+</div>
+<div id="applicable-authors" class="section level1">
+<h1><span><code>applicable</code> Authors</span></h1>
+<p>The R package <code>applicable</code> is currently in active development <span class="citation">(Kuhn and Cormar 2019)</span>. It is a product of <a href="https://www.marlycormar.com">Marly Cormar</a>’s Summer of 2019 internship with <strong>RStudio</strong> in collaboration with <a href="https://github.com/topepo">Max Kuhn</a>.</p>
+<p>A shiny application comes with the package. It illustrates different methods used to define the applicability domain model. Check it out! <a href="https://marly-cormar.shinyapps.io/applicable/" class="uri">https://marly-cormar.shinyapps.io/applicable/</a></p>
+<div class="member-cards">
+<h2 id="max-kuhn">Max Kuhn</h2>
+<div class="figure">
+<img src="https://avatars1.githubusercontent.com/u/5731043?s=400&amp;v=4" alt="" />
+<p class="caption">Max Kuhn</p>
+</div>
+<p>Lead author</p>
+<p>Statistician; software developer of many actively used R packages: <code>caret</code>, <code>recipes</code>, etc.</p>
+<h2 id="marly-cormar">Marly Cormar</h2>
+<div class="figure">
+<img src="https://avatars1.githubusercontent.com/u/8559654?s=400&amp;v=4" alt="" />
+<p class="caption">Marly Cormar</p>
+</div>
+<p>Author and maintainer</p>
+<p>PhD candidate in Mathematics; software developer; data analyst.</p>
+</div>
+<p><span class="disclaimer">All pictures above are from the authors’ GitHub profiles. This poster was created via the R package <a href="https://github.com/rstudio/pagedown"><strong>pagedown</strong></a>.</span></p>
+</div>
+<div id="applicability-domain" class="section level1">
+<h1><span>Applicability Domain</span></h1>
+<div id="applicability-domain-1" class="section level2">
+<h2>Applicability Domain</h2>
+<p>The <strong>Applicability Domain</strong> (AD) expresses the scope and limitations of a model, i.e., the sample space for which the model is considered to be applicable.</p>
+<p>The methods used to define the AD are based on the premise that a model’s prediction is reliable if the sample for which a prediction is being made is <em>similar</em> to the training set.</p>
+</div>
+<div id="applicability-domain-in-chemistry" class="section level2">
+<h2>Applicability Domain In Chemistry</h2>
+<p>QSARs (Quantitative Structure–Activity Relationships) are theoretical models that can be used to predict the physicochemical, biological and environmental properties of chemicals.</p>
+<p>Since 2004, the Organization for Economic Cooperation and Development (OECD) Member Countries adopted five principles for the validation of QSAR models for regulatory purposes, which include a “defined domain of applicability”. This need is based on the fact that QSARs are reductionist models, which are inevitably associated with limitations in terms of the types of chemical structures, physicochemical properties and mechanisms of action for which they can generate reliable predictions <span class="citation">(Netzeva et al. 2005)</span>.</p>
+</div>
+<div id="applicability-domain-outside-chemistry" class="section level2">
+<h2>Applicability Domain Outside Chemistry</h2>
+<p>Although there are methods currently used to establish the applicability domain of models, they have not been systematically studied as a whole, and the ones that have mostly use the outcome of the prediction to establish reliability.</p>
+<p>Applicability domain methods measure the ‘similarity’ of new samples to the training set. As such, they do not depend on the outcome of the prediction, i.e., they are <em>unsupervised methods</em>.</p>
+</div>
+</div>
+<div id="methods" class="section level1">
+<h1><span>Methods</span></h1>
+<style type="text/css">
+#.section-4 {
+#  background-image: url(https://upload.wikimedia.org/wikipedia/commons/7/7e/Mudra-Naruto-KageBunshin.svg) !important;
+#  background-size: 40% !important;
+#  background-position: right top !important;
+#  background-repeat: no-repeat !important;
+#}
+</style>
+<div id="principal-component-analysis" class="section level2">
+<h2>Principal Component Analysis</h2>
+<!--
+Because PCA is blind to the response, it is an unsupervised technique.
+-->
+<p>It is a commonly used data reduction technique. This method seeks to find linear combinations of the predictors, known as principal components (PCs), which capture the most possible variance and are guaranteed to be uncorrelated.</p>
+<p>The first PC is defined as the linear combination of the predictors that captures the most variability of all possible linear combinations. Then, subsequent PCs are derived such that these linear combinations capture the most remaining variability while also being uncorrelated with all previous PCs. The jth PC can be written as</p>
+<p><span class="math display">\[PC_j = (a_{j1} \times \text{Predictor 1}) + \dots + (a_{jP} \times \text{Predictor P}),\]</span></p>
+<p>where <span class="math inline">\(P\)</span> is the number of predictors. The coefficients <span class="math inline">\(a_{ji}\)</span> are called component weights and help us understand which predictors are most important to each PC <span class="citation">(Kuhn and Johnson 2018)</span>.</p>
+<!--
+While PCA delivers new predictors with desirable characteristics, it must be used with understanding and care. PCA seeks predictor-set variation without regard to any further understanding of the predictors (i.e., measurement scales or distributions) or to knowledge of the modeling objectives (i.e., response variable). Hence, without proper guidance, PCA can generate components that summarize characteristics of the data that are irrelevant to the underlying structure of the data and also to the ultimate modeling objective.
+
+To help PCA avoid summarizing distributional differences and predictor scale information, it is best to first transform skewed predictors and then center and scale the predictors prior to performing PCA. Centering and scaling enables PCA to find the underlying relationships in the data without being influenced by the original measurement scales.
+
+The second caveat of PCA is that it does not consider the modeling objective or response variable when summarizing variability. If the predictive relationship between the predictors and response is not connected to the predictors’ variability, then the derived PCs will not provide a suitable relationship with the response.
+-->
+</div>
+<div id="hat-values" class="section level2">
+<h2>Hat Values</h2>
+<p>They measure the distance of a data point to the center of the training set distribution. For example, if the training set were the matrix <span class="math inline">\(X_{n \times p}\)</span>, then the hat matrix for the training set would be computed using the formula</p>
+<p><span class="math display">\[H = X^\intercal(X^\intercal X)^{-1}X.\]</span>
+The corresponding hat values for the training set would be the diagonal entries of <span class="math inline">\(H\)</span>. For a new sample, say a data vector <span class="math inline">\(u_{p \times 1}\)</span>, the hat value would be</p>
+<p><span class="math display">\[h = u^\intercal (X^\intercal X)^{-1}u.\]</span>
+Hat values are less tolerant than PCA. For example, extremely correlated predictors will degrade the ability of the hat values to be effectively used. Also, since an inverse is used, there cannot be an linear dependencies within <span class="math inline">\(X\)</span>.</p>
+</div>
+<div id="similarity-statistics" class="section level2">
+<h2>Similarity Statistics</h2>
+<p>Similarity statistics can be used to compare data sets where all of the predictors are binary. One of the most common measures is the Jaccard index. For sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, the Jaccard index is defined as</p>
+<p><span class="math display">\[J(A, B) = \frac{|A \cap B|}{|A \cup B|}.\]</span></p>
+<p>For a training set of size <span class="math inline">\(n\)</span>, there are <span class="math inline">\(n\)</span> similarity statistics for each new sample. These can be summarized via the mean statistic or a quantile. In general, we want similarity to be low within the training set and high for new samples to be predicted.</p>
+</div>
+</div>
+<div id="the-applicable-package" class="section level1">
+<h1><span>The <code>applicable</code> package</span></h1>
+<p><strong>Principal Component Analysis</strong></p>
+<p>Principal component analysis methods in `applicable:</p>
+<ul>
+<li><code>apd_pca</code>: computes the PCs that account for up to either 95% or the provided threshold of variability. It also computes the percentiles of the PCs and the mean of each PC.</li>
+<li><code>autoplot</code>: plots the distribution function for pcas.</li>
+<li><code>score</code>: calculates the PCs of the new data and their percentiles as compared to the training data. The number of PCs computed depends on the threshold given at fit time. It also computes the multivariate distance between each PC and its mean.</li>
+</ul>
+<p><br></p>
+<p><strong>Hat values</strong></p>
+<p>Hat values methods in `applicable:</p>
+<ul>
+<li><code>apd_hat_values</code>: computes the matrix <span class="math inline">\(X^\intercal\)</span></li>
+<li><code>score</code>: calculates the hat values of new samples and their percentiles.</li>
+</ul>
+<p><strong>Similarity statistics</strong></p>
+<p>Jaccard metric methods in <code>applicable</code>:</p>
+<ul>
+<li><code>apd_similarity</code>: analyzes samples in terms of similarity scores. For a training set of <span class="math inline">\(n\)</span> samples, a new sample is compared to each, resulting in <span class="math inline">\(n\)</span> similarity scores. These can be summarized into the median similarity.</li>
+<li><code>autoplot</code>: shows the cumulative probability versus the unique similarity values in the training set.</li>
+<li><code>score</code>: scores new samples using similarity methods. In particular, it calculates the similarity scores.</li>
+</ul>
+<p><strong>Example - Similarity statistics</strong></p>
+<p>The example data (<code>binary_tr</code>) is from two QSAR data sets where binary fingerprints are used as predictors. We will construct the model, plot the empirical cumulative distribution function for the training set, and summarize across all training set similarities.</p>
+<pre><code>sim &lt;- apd_similarity(binary_tr)
+autoplot(sim)</code></pre>
+<pre><code>mean_sim &lt;-
+  score(sim,
+  new_data = binary_unk)
+mean_sim</code></pre>
+<div class="figure">
+<img src="images/autoplot.png" alt="" />
+<p class="caption">autoplot</p>
+</div>
+<div class="figure">
+<img src="images/mean_sim.png" alt="" />
+<p class="caption">mean_sim</p>
+</div>
+</div>
+<div id="bibliography" class="section level1 unnumbered">
+<h1><span>Bibliography</span></h1>
+<div id="refs" class="references">
+<div id="ref-applicable">
+<p>Kuhn, Max, and Marly Cormar. 2019. <em>R Package: Applicable</em>. <a href="https://github.com/tidymodels/applicable">https://github.com/tidymodels/applicable</a>.</p>
+</div>
+<div id="ref-APM">
+<p>Kuhn, Max, and Kjell Johnson. 2018. <em>Applied Predictive Modeling</em>. <a href="http://appliedpredictivemodeling.com">http://appliedpredictivemodeling.com</a>.</p>
+</div>
+<div id="ref-Curr">
+<p>Netzeva, Tatiana I., Andrew P. Worth, Tom Aldenberg, Romualdo Benigni, Mark T. D. Cronin, Paola Gramatica, Joanna S. Jaworska, et al. 2005. <em>Current Status of Methods for Defining the Applicability Domain of (Quantitative) Structure–Activity Relationships</em>. <a href="https://www.ncbi.nlm.nih.gov/pubmed/16180989">https://www.ncbi.nlm.nih.gov/pubmed/16180989</a>.</p>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+(function() {
+  // add appropriate classes to h1 and its parent div
+  var i, j, d, s, el, els = document.getElementsByTagName('h1');
+  for (i = 0; i < els.length; i++) {
+    el = els[i];
+    el.parentNode.className += ' section-' + (i + 1);
+    if (i === 0) continue;  // that's all we need for the poster title
+    el.className += ' ui title ribbon label';  // poster sections
+    s = el.firstElementChild;  // move the class from inner <span> to <h1>
+    if (s) {
+      el.className += ' ' + s.className;
+      s.outerHTML = s.innerHTML;
+    }
+    el.parentNode.className += ' ui raised segment';
+    // wrap everything except the h1 in a section into <div class="content">
+    d = document.createElement('div');
+    d.className = 'content';
+    while (el.nextSibling) {
+      d.append(el.nextSibling);
+    }
+    el.parentNode.append(d);
+  }
+
+  // turn h2 sections in <div class="member-cards"> into semantic ui's cards
+  els = document.querySelectorAll('.member-cards');
+  for (i = 0; i < els.length; i++) {
+    el = els[i].querySelectorAll('h2');
+    for (j = 0; j < el.length; j++) {
+      s = el[j];
+      d = document.createElement('div');
+      d.className = 'ui card';
+      d.innerHTML = '<div class="image"></div><div class="content">' +
+        '<div class="header"></div><div class="meta"></div>' +
+        '<div class="description"></div></div>'
+      d.firstChild.innerHTML = s.nextElementSibling.querySelector('img').outerHTML;
+      s.parentNode.removeChild(s.nextElementSibling);
+      d.lastChild.children[0].innerHTML = s.innerHTML;
+      d.lastChild.children[1].innerHTML = s.nextElementSibling.innerHTML;
+      s.parentNode.removeChild(s.nextElementSibling);
+      d.lastChild.children[2].innerHTML = s.nextElementSibling.innerHTML;
+      s.parentNode.removeChild(s.nextElementSibling);
+      s.parentNode.replaceChild(d, s);
+    }
+  }
+
+  // remove the section divs for h2 - h5
+  els = document.querySelectorAll('h2, h3, h4, h5');
+  for (i = 0; i < els.length; i++) {
+    el = els[i].parentNode;
+    if (el && el.tagName === 'DIV' && /section level/.test(el.className)) {
+      el.outerHTML = el.innerHTML;
+    }
+  }
+
+  // replace <p><span class="foo">bar</span></p> with <div class="foo">bar</div>
+  els = document.getElementsByTagName('p');
+  for (i = 0; i < els.length;) {
+    el = els[i]; i++;
+    if (el.childElementCount !== 1) continue;
+    s = el.firstElementChild;
+    if (s.tagName !== 'SPAN' || s.outerHTML !== el.innerHTML) continue;
+    d = document.createElement('div');
+    d.innerHTML = s.innerHTML;
+    d.className = s.className;
+    el.parentNode.replaceChild(d, el);
+    i--;
+  }
+
+  // break words in <a> if the text and uri are identical
+  els = document.getElementsByTagName('a');
+  for (i = 0; i < els.length; i++) {
+    el = els[i];
+    if (el.getAttribute('href') === el.innerText) el.style.wordBreak = 'break-all';
+  }
+})();
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = `https://mathjax.rstudio.com/latest/MathJax.js` + "?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+
+  </body>
+</html>
