@@ -16,47 +16,34 @@ Applicability Domain [in]{.tiny} Data Science
 
 
 
-
-[Authors]{.red}
+[`applicable` Authors]{}
 ================================================================================
 
-We are a team of shinobi and kunoichi who wish to share the fun and secrets of the **xaringan** package with you.
+The R package `applicable` is currently in active development [@applicable]. It is a product of [Marly Cormar](https://www.marlycormar.com)'s Summer of 2019 internship with **RStudio** in collaboration with [Max Kuhn](https://github.com/topepo).
+
+A shiny application comes with the package. It illustrates different methods used to define the applicability domain model. Check it out! https://marly-cormar.shinyapps.io/applicable/
+
 
 ::: member-cards
-## Emi Tanaka
+## Max Kuhn
 
-![Emi](https://avatars3.githubusercontent.com/u/7620319?s=400&v=4)
+![Max Kuhn](https://avatars1.githubusercontent.com/u/5731043?s=400&v=4)
 
-Lead author, and the ninja theme author
+Lead author
 
-Emi laid out the first sketch of the book, which made Yihui believe that the book had been half-done.
+Statistician; software developer of many actively used R packages: `caret`, `recipes`, etc.
 
-## Joseph Casillas
+## Marly Cormar
 
-![](https://avatars1.githubusercontent.com/u/1747068?s=400&v=4)
+![Marly Cormar](https://avatars1.githubusercontent.com/u/8559654?s=400&v=4)
 
-Contributor of **xaringan**
+Author and maintainer
 
-"Count me in," replied Joseph when Yihui asked who wanted to co-author the book.
+PhD candidate in Mathematics; software developer; data analyst.
 
-## Eric Nantz
-
-![](https://avatars0.githubusercontent.com/u/1043111?s=400&v=4)
-
-Host of the R Podcast
-
-Yihui is eager to know how much Eric's writing is better than his magnetic voice.
-
-## Yihui Xie
-
-![](https://avatars0.githubusercontent.com/u/163582?s=400&v=4)
-
-Main author of **xaringan**
-
-Yihui knows a bit about R/HTML/CSS/JS and wrote , which became a cornerstone of R Markdown.
 :::
 
-[All pictures above are from the authors' Github profiles. This poster was created via the R package [**pagedown**](https://github.com/rstudio/pagedown).]{.disclaimer}
+[All pictures above are from the authors' GitHub profiles. This poster was created via the R package [**pagedown**](https://github.com/rstudio/pagedown).]{.disclaimer}
 
 
 
