@@ -48,12 +48,12 @@ PhD candidate in Mathematics; software developer; data analyst.
 
 
 
-[Applicability Domain]{.blue}
+[Applicability Domain]{}
 ================================================================================
 
 ## Applicability Domain
 
-The **Applicability Domain** (AD) expressess the scope and limitations of a model, i.e., the sample space for which the model is considered to be applicable.
+The **Applicability Domain** (AD) expresses the scope and limitations of a model, i.e., the sample space for which the model is considered to be applicable.
 
 The methods used to define the AD are based on the premise that a model's prediction is reliable if the sample for which a prediction is being made is _similar_ to the training set.
 
