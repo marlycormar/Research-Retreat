@@ -1,16 +1,5 @@
-### Current poster template
+## About
 
-    HTML Poster (the ReLaXed Style)
+Poster presented at the **NSF-AGEP Research Exchange Retreat** in Stanford University.
 
-### To render PDF & html
-
-    pagedown::chrome_print("Poster.Rmd")
-
-### To render PDF only
-
-    pagedown::chrome_print("Poster.html")
-
-### Check spelling
-
-    library(spelling)
-    spell_check_files("./Poster.Rmd")
+The poster pdf can be found here: [Poster](https://www.marlycormar.com/presentations/Poster.pdf).
