@@ -140,7 +140,7 @@ Principal component analysis methods in `applicable:
 
 Hat values methods in `applicable:
 
-- `apd_hat_values`: computes the matrix $X^\intercal$
+- `apd_hat_values`: computes the matrix $(X^\intercal X)^{-1}$.
 - `score`: calculates the hat values of new samples and their percentiles.
 
 **Similarity statistics**
